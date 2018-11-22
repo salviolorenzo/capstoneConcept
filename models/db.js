@@ -8,9 +8,9 @@ const pgp = require("pg-promise")({
 });
 
 const db = pgp({
-  host: localhost,
+  host: "localhost",
   port: 5432,
-  database: ctt - db
+  database: "ctt-db"
 })
 
 module.exports = db;
