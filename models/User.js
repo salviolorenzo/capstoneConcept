@@ -29,6 +29,22 @@ class User {
   }
 
   // UPDATE
+  updateName(newName) {
+    return db.result(`
+      update users
+      set name = $1
+      where id = $2
+    `, [newName, this.id]);
+  }
+
+  updateUsername(newUsername) {
+    return db.result(`
+      update users
+      set username = $1
+      where id = $2
+    `, [newUsername, this.id]);
+  }
+
   // DELETE
   deleteAccount() {
     return db.result(`

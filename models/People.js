@@ -10,6 +10,7 @@ class People {
       this.reach = reach
   }
 
+  // CREATE
   static add(name, username, avg_score, category, reach) {
     return db.one(`insert into peopleYouFollow
       (name, username, avg_score, category, reach)
@@ -18,4 +19,19 @@ class People {
     `,
       [name, username, avg_score, category, reach])
   }
+
+  // RETRIEVE
+  static getAll() {
+    return db.any(`select * from peopleYouFollow`)
+  }
+
+  static getById(id) {
+    return db.one(`select * from peopleYouFollow where id = $1`, [id]);
+  }
+
+  static getByName(name) {
+    return db.any(`select * from peopleYouFollow where name ilike '%$1%'`, [name])
+  }
+
+
 }
