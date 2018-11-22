@@ -45,6 +45,16 @@ class User {
     `, [newUsername, this.id]);
   }
 
+  updateEmail(newEmail) {
+    return db.result(`
+      update users
+      set email = $1
+      where id = $2
+    `, [newEmail, this.id])
+  }
+
+  // ADD ABILITY TO UPDATE PASSWORD
+
   // DELETE
   deleteAccount() {
     return db.result(`
