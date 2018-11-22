@@ -2,7 +2,7 @@ insert into users
   (name, username, email, password)
 values
   ('John Smith', 'john', 'john@mail.com', 'password'),
-  ('John Smith', 'john', 'john@mail.com', 'password'),
+  -- ('John Smith', 'john', 'john@mail.com', 'password'),
   ('Guy Fieri', 'flavortown', 'guy@mail.com', 'password');
 
 insert into peopleYouFollow
