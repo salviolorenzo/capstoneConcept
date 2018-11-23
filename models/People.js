@@ -33,7 +33,24 @@ class People {
     return db.any(`select * from peopleYouFollow where name ilike '%$1%'`, [name])
   }
 
+  // UPDATE
+  static updateScore(newScore, id) {
+    return db.result(
+      `update peopleYouFollow
+      set avg_score = $1
+      where id=$2`, [newScore, id]
+    )
+  }
 
+
+
+  // DELETE
+
+  static delete(id) {
+    return db.result(
+      `delete * from peopleYouFollow where id=$1`, [id]
+    )
+  }
 
 
 
