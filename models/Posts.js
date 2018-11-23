@@ -37,8 +37,20 @@ class Post {
   }
 
   // UPDATE
-
+  static updateScore(newScore, id) {
+    return db.result(
+      `update posts
+      set score=$1
+      where id=$2`, [newScore, id]
+    )
+  }
   // DELETE
+  static delete(id) {
+    return db.result(`
+      delete * from posts where id=$1
+    `, [id])
+  }
+
 }
 
 module.exports = Post;
