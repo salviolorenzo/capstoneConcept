@@ -20,6 +20,7 @@ create table posts (
   id serial primary key,
   content varchar(1000),
   score float,
+  date timestamp,
   owner_id integer references peopleYouFollow (id)
 );
 
