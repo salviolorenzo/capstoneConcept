@@ -27,6 +27,8 @@ create table posts (
 create table news (
   id serial primary key,
   title varchar (100),
+  date timestamp,
   content text,
-  score float
+  score float,
+  about_id integer references peopleYouFollow (id)
 );

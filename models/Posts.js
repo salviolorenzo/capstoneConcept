@@ -4,17 +4,18 @@ class Post {
   constructor(id, content, score) {
     this.id = id,
       this.content = content,
-      this.score = score
+      this.score = score,
+      this.date = date
   }
 
 
   // CREATE
-  static add(content, score, owner_id) {
+  static add(content, score, date, owner_id) {
     return db.one(`insert into posts
     (content, score, owner_id)
     values
     ($1, $2, $3)`,
-      [content, score, owner_id]);
+      [content, score, date, owner_id]);
   }
 
   // RETRIEVE
