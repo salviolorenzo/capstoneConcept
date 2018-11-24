@@ -41,4 +41,11 @@ class News {
   // UPDATE
 
   // DELETE
+  static delete(id){
+    return db.result(
+      `delete * from news where id =$1`, [id]
+    )
+  }
+
+
 }
